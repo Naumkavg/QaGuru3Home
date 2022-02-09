@@ -10,6 +10,9 @@ import org.openqa.selenium.WebElement;
 
 import javax.swing.*;
 
+import java.text.SimpleDateFormat;
+
+import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -21,6 +24,8 @@ public class ToolsQATest {
     static void beforeAll() {
 
         Configuration.baseUrl = "https://demoqa.com";
+        Configuration.browserSize = "1920 x 1880";
+
     }
 
     @Test
