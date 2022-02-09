@@ -24,7 +24,7 @@ public class ToolsQATest {
     static void beforeAll() {
 
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920 x 1880";
+        Configuration.browserSize = "1920x1880";
 
     }
 
