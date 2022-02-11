@@ -2,17 +2,10 @@ package box;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.impl.WebElementSelector;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
-import javax.swing.*;
-
-import java.text.SimpleDateFormat;
-
-import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -38,14 +31,18 @@ public class ToolsQATest {
         $("#lastName").setValue("Korleone"); // фамилия
         $("#userEmail").setValue("baron@boroda.com"); // почта
         $(byText("Male")).click(); // пол
-        $("#userNumber").setValue("123456789"); // номер телефона
+        $("#userNumber").setValue("0123456789"); // номер телефона
+        $("#dateOfBirthInput").click(); // календарь
+
+        $("#react-datepicker__month-select").selectOptionByValue("March");
+        $("#react-datepicker__year-select").selectOptionByValue("1964");
+        $("#react-datepicker__week").$(byText("7")).click();
+        $("#subjectsInput").setValue("999999").pressEnter();
 
 
 
 
     }
-
-
 
 
 }
