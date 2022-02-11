@@ -32,8 +32,8 @@ public class ToolsQATest {
         $("#userEmail").setValue("baron@boroda.com"); // почта
         $(byText("Male")).click(); // пол
         $("#userNumber").setValue("0123456789"); // номер телефона
-        $("#dateOfBirthInput").click(); // календарь
 
+        $("#dateOfBirthInput").click(); // календарь
         $("#react-datepicker__month-select").selectOptionByValue("March");
         $("#react-datepicker__year-select").selectOptionByValue("1964");
         $("#react-datepicker__week").$(byText("7")).click();
