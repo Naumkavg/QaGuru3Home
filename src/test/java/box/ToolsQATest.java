@@ -27,18 +27,26 @@ public class ToolsQATest {
 
         $(".main-header").shouldHave(text("Practice Form"));
 
-        $("#firstName").setValue("Don"); // имя
+        $("#firstName").setValue("Vito"); // имя
         $("#lastName").setValue("Korleone"); // фамилия
         $("#userEmail").setValue("baron@boroda.com"); // почта
         $(byText("Male")).click(); // пол
         $("#userNumber").setValue("0123456789"); // номер телефона
-
         $("#dateOfBirthInput").click(); // календарь
-        $("#react-datepicker__month-select").selectOptionByValue("March");
-        $("#react-datepicker__year-select").selectOptionByValue("1964");
-        $("#react-datepicker__week").$(byText("7")).click();
-        $("#subjectsInput").setValue("999999").pressEnter();
-
+        $(".react-datepicker__month-select").selectOption("December");
+        $(".react-datepicker__year-select").selectOption("1900");
+        $("[aria-label$='December 7th, 1900']").click();
+        $("#subjectsInput").setValue("Commerce").pressEnter(); // доожность
+               $(byText("Music")).click(); // хобби
+        $("#uploadPicture").uploadFromClasspath("img/1.png"); // фото
+        $("#state").scrollTo().click();
+        $("#currentAddress").setValue("Sicily"); // адрес
+        $("#stateCity-wrapper").$(byText("Haryana"));
+        $("#city").$(byText("Panipat"));
+        $("#submit").click();
+        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+        $(".table-responsive").$(byText("Student Name"))
+                .parent().shouldHave(text("Testing First Name Testing Last Name"));
 
 
 
