@@ -37,26 +37,17 @@ public class ToolsQATest {
         $(".react-datepicker__year-select").selectOption("1900");
         $("[aria-label$='December 7th, 1900']").click();
         $("#subjectsInput").setValue("Commerce").pressEnter(); // доожность
-               $(byText("Music")).click(); // хобби
+        $(byText("Music")).click(); // хобби
         $("#uploadPicture").uploadFromClasspath("img/1.png"); // фото
         $("#state").scrollTo().click();
 
        // $(byText("hobbies-checkbox-1")).parent().click();
 
         $("#currentAddress").setValue("Sicily"); // адрес
-
-
-
-
-                $("#state").click();
-                $("#stateCity-wrapper").$(byText("Haryana")).click();
-
+        $("#state").click();
+        $("#stateCity-wrapper").$(byText("Haryana")).click();
         $("#city").click();
         $("#stateCity-wrapper").$(byText("Karnal")).click();
-
-
-
-
         $("#submit").click();
 
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
