@@ -40,10 +40,25 @@ public class ToolsQATest {
                $(byText("Music")).click(); // хобби
         $("#uploadPicture").uploadFromClasspath("img/1.png"); // фото
         $("#state").scrollTo().click();
+
+       // $(byText("hobbies-checkbox-1")).parent().click();
+
         $("#currentAddress").setValue("Sicily"); // адрес
-        $("#stateCity-wrapper").$(byText("Haryana"));
-        $("#city").$(byText("Panipat"));
+
+
+
+
+                $("#state").click();
+                $("#stateCity-wrapper").$(byText("Haryana")).click();
+
+        $("#city").click();
+        $("#stateCity-wrapper").$(byText("Karnal")).click();
+
+
+
+
         $("#submit").click();
+
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").$(byText("Student Name"))
                 .parent().shouldHave(text("Testing First Name Testing Last Name"));
