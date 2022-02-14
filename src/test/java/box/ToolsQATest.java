@@ -52,8 +52,7 @@ public class ToolsQATest {
 
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").$(byText("Student Name"))
-                .parent().shouldHave(text("Testing First Name Testing Last Name"));
-
+                .parent().shouldHave(text("Vito Korleone"));
 
 
     }
