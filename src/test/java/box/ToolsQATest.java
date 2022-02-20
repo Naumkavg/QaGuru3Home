@@ -53,7 +53,24 @@ public class ToolsQATest {
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").$(byText("Student Name"))
                 .parent().shouldHave(text("Vito Korleone"));
-
+        $(".table-responsive").$(byText("Student Email"))
+                .parent().shouldHave(text("baron@boroda.com"));
+        $(".table-responsive").$(byText("Gender"))
+                .parent().shouldHave(text("Male"));
+        $(".table-responsive").$(byText("Mobile"))
+                .parent().shouldHave(text("0123456789"));
+        $(".table-responsive").$(byText("Date of Birth"))
+                .parent().shouldHave(text("07 December,1900"));
+        $(".table-responsive").$(byText("Subjects"))
+                .parent().shouldHave(text("Commerce"));
+        $(".table-responsive").$(byText("Hobbies"))
+                .parent().shouldHave(text("Music"));
+        $(".table-responsive").$(byText("Picture"))
+                .parent().shouldHave(text("1.png"));
+        $(".table-responsive").$(byText("Address"))
+                .parent().shouldHave(text("Sicily"));
+        $(".table-responsive").$(byText("State and City"))
+                .parent().shouldHave(text("Haryana Karnal"));
 
     }
 
