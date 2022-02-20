@@ -52,8 +52,9 @@ public class ToolsQATest {
 
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive")
-                .parent().shouldHave(text("Vito Korleone"),text("baron@boroda.com"),text("Male"),text("0123456789"), text("07 December,1900"),
-                        text("Commerce"), text("Music"), text("1.png"), text("Sicily"), text("Haryana Karnal"));
+        .parent().shouldHave(text("Vito Korleone"),text("baron@boroda.com"),
+        text("Male"),text("0123456789"), text("07 December,1900"),
+        text("Commerce"), text("Music"), text("1.png"), text("Sicily"), text("Haryana Karnal"));
 
 
     }
