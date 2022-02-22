@@ -22,16 +22,19 @@ public class ToolsQATestPageObjects {
 
     @Test
     void successFillTest() {
-        registrationPage.openPage()
+        new RegistrationPage().openPage()
              .setFirstName("Vito")
              .setLastName("Korleone")
-             .setUserEmail("baron@boroda.com");
+             .setUserEmail("baron@boroda.com")
+             .setUserNumber("0123456789");
 
+        public RegistrationPage setGender(String Gender) {
+            $(byText(Gender)).click();
 
+new Cliker().
         $(byText("Male")).click(); // пол
 
-        // номер телефона
-        new RegistrationPage().setUserNumber("0123456789");
+
 
 
         $("#dateOfBirthInput").click(); // календарь

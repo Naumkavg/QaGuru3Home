@@ -1,46 +1,60 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.files.DownloadAction;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.files.DownloadActions.click;
 
 public class RegistrationPage {
     // locators
-
-
-    SelenideElement
+    private SelenideElement
             headerTitle = $(".main-header"),
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
-            userEmailInput = $("#userEmail"),
-            userNumberInput = $("#userNumber");
+            UserEmailInput = $("#UserEmail"),
+            userNumberInput = $("#UserNumber");
+
+
+}
+
+
+
+
 
     // actions
 
-public RegistrationPage openPage () {
+public RegistrationPage openPage() {
         open("/automation-practice-form");
         headerTitle.shouldHave(text("Practice Form"));
         return this;
-}
+        }
 public RegistrationPage setFirstName (String firstName) {
         firstNameInput.setValue(firstName);
         return this;
+        }
+public RegistrationPage setLastName (String LastName) {
+        lastNameInput.setValue(LastName);
+         return this;
 }
-public RegistrationPage setUserEmail (String userEmail) {
-        userEmailInput.setValue(userEmail);
+public RegistrationPage setUserEmail (String setUserEmail) {
+         UserEmailInput.setValue(setUserEmail);
+         return this;
+        }
+
+public RegistrationPage setUserNumber (String userNumber) {
+        userNumberInput.setValue(userNumber);
         return this;
 }
-public void setLastName (String lastName) {
-    lastNameInput.setValue(lastName);
+    public RegistrationPage setGender (String Gender) {
+        $(byText(Gender)).click();
 
-}public void setUserNumber (String UserNumber) {
-        userNumberInput.setValue(UserNumber);
-}
+        return this;
 
-
-
+    }
 
 
 
