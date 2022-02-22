@@ -22,15 +22,10 @@ public class ToolsQATestPageObjects {
 
     @Test
     void successFillTest() {
-
-        // открыть сайт
-         new RegistrationPage().openPage()
-        // имя
-        .setFirstName("Vito")
-        // фамилия
-        .setLastName("Korleone")
-        // email
-        .setUserEmail("baron@boroda.com");
+        registrationPage.openPage()
+             .setFirstName("Vito")
+             .setLastName("Korleone")
+             .setUserEmail("baron@boroda.com");
 
 
         $(byText("Male")).click(); // пол
