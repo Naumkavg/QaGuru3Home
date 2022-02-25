@@ -26,13 +26,13 @@ public class ToolsQATestPageObjects {
              .setFirstName("Vito")
              .setLastName("Korleone")
              .setUserEmail("baron@boroda.com")
-             .setUserNumber("0123456789");
+             .setUserNumber("0123456789")
+             .setgenterWrapper("Male");
 
-        public RegistrationPage setGender(String Gender) {
-            $(byText(Gender)).click();
 
-new Cliker().
-        $(byText("Male")).click(); // пол
+       // public RegistrationPage setGender(String Gender) {
+         //   $(byText(Gender)).click();
+
 
 
 

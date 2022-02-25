@@ -16,14 +16,10 @@ public class RegistrationPage {
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             UserEmailInput = $("#UserEmail"),
-            userNumberInput = $("#UserNumber");
-
+            userNumberInput = $("#UserNumber"),
+            genterWrapper = $("#genterWrapper");
 
 }
-
-
-
-
 
     // actions
 
@@ -49,8 +45,8 @@ public RegistrationPage setUserNumber (String userNumber) {
         userNumberInput.setValue(userNumber);
         return this;
 }
-    public RegistrationPage setGender (String Gender) {
-        $(byText(Gender)).click();
+    public RegistrationPage setgenterWrapper (String Male) {
+        genterWrapper.$(byText(Male)).click();
 
         return this;
 
