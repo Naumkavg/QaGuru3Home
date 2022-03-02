@@ -27,32 +27,21 @@ public class ToolsQATestPageObjects {
         .setFirstName("Vito")
         .setLastName("Korleone")
         .setuserEmail("baron@boroda.com")
-        .setgenterWrapper("Male");
-        RegistrationPage.setuserNumber("0123456789");
-        RegistrationPage.setdateOfBirth("December", "7th", "1900");
-
-       // public RegistrationPage setGender(String Gender) {
-         //   $(byText(Gender)).click();
-
-
-
+        .setgenterWrapper("Male")
+        .setuserNumber("0123456789")
+        .setdateOfBirth("December", "7th", "1900")
+        .setsubjectsInput("Commerce");
+        RegistrationPage.setgenterWrapper("Music")    // хобби
+        .uploadPicture("img/1.png")  // фото
+        .setCurrentAddress("Sicily");
 
 
-       // $("#dateOfBirthInput").click(); // календарь
-       // $(".react-datepicker__month-select").selectOption("December");
-      //  $(".react-datepicker__year-select").selectOption("1900");
-       // $("[aria-label$='December 7th, 1900']").click();
-        $("#subjectsInput").setValue("Commerce").pressEnter(); // доожность
-        $(byText("Music")).click(); // хобби
-        $("#uploadPicture").uploadFromClasspath("img/1.png"); // фото
-      $("#state").scrollTo().click();
 
-        $("#currentAddress").setValue("Sicily"); // адрес
+        // $("#currentAddress").setValue("Sicily"); // адрес
         $("#state").click();
         $("#stateCity-wrapper").$(byText("Haryana")).click();
         $("#city").click();
         $("#stateCity-wrapper").$(byText("Karnal")).click();
-        $("#state").scrollTo().click();
         $("#submit").click();
 
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
