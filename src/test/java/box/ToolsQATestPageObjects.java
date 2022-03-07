@@ -31,16 +31,15 @@ public class ToolsQATestPageObjects {
         .setuserNumber("0123456789")
         .setdateOfBirth("December", "7th", "1900")
         .setsubjectsInput("Commerce");
-        RegistrationPage.setgenterWrapper("Music")    // хобби
+        RegistrationPage.sethobbiesWrapper("Music")    // хобби
         .uploadPicture("img/1.png")  // фото
-        .setCurrentAddress("Sicily");
+        .setCurrentAddress("Sicily"); // адрес
 
 
 
-        // $("#currentAddress").setValue("Sicily"); // адрес
-        $("#state").click();
         $("#stateCity-wrapper").$(byText("Haryana")).click();
         $("#city").click();
+
         $("#stateCity-wrapper").$(byText("Karnal")).click();
         $("#submit").click();
 

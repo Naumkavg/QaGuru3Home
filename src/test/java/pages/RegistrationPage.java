@@ -11,18 +11,18 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class RegistrationPage {
     // locators
-    private SelenideElement
-            headerTitle = $(".practice-form-wrapper"),
-            firstNameInput = $("#firstName"),
-            lastNameInput = $("#lastName"),
-            userEmailInput = $("#userEmail"),
-            userNumberInput = $("#userNumber"),
-            genterWrapper = $("#genterWrapper"),
-            dateOfBirth = $("#dateOfBirthInput"),
-            subjectsInput = $("#subjectsInput"),
-            hobbiesWrapper = $("#hobbiesWrapper"),
-            uploadPicture = $("#uploadPicture"),
-            setCurrentAddress = $("#currentAddress");
+private SelenideElement
+     headerTitle = $(".practice-form-wrapper"),
+     firstNameInput = $("#firstName"),
+     lastNameInput = $("#lastName"),
+     userEmailInput = $("#userEmail"),
+     userNumberInput = $("#userNumber"),
+     genterWrapper = $("#genterWrapper"),
+     dateOfBirth = $("#dateOfBirthInput"),
+     subjectsInput = $("#subjectsInput"),
+     hobbiesWrapper = $("#hobbiesWrapper"),
+     uploadPicture = $("#uploadPicture"),
+     setCurrentAddress = $("#currentAddress");
 
 
     // actions
@@ -66,13 +66,17 @@ public RegistrationPage sethobbiesWrapper (String Music) {
         hobbiesWrapper.$(byText(Music)).click();
     return this;
 }
-public RegistrationPage uploadPicture(String upload) {
-    uploadPicture.uploadFile(new File("img/1.png"));
+public RegistrationPage uploadPicture (String uploadFile) {
+    uploadPicture.uploadFromClasspath("img/1.png");
     $("#state").scrollTo().click();
     return this;
 }
 public RegistrationPage setCurrentAddress (String currentAddress) {
     setCurrentAddress.setValue(currentAddress);
+    $("#state").click();
         return this;
 }
+
+
+
 }
