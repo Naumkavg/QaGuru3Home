@@ -26,31 +26,18 @@ public class ToolsQATestPageObjects {
         RegistrationPage.openPage()
         .setFirstName("Vito")
         .setLastName("Korleone")
-        .setuserEmail("baron@boroda.com")
-        .setgenterWrapper("Male")
-        .setuserNumber("0123456789")
-        .setdateOfBirth("December", "7th", "1900")
-        .setsubjectsInput("Commerce");
-        RegistrationPage.sethobbiesWrapper("Music")    // хобби
-        .uploadPicture("img/1.png")  // фото
-        .setCurrentAddress("Sicily"); // адрес
-
-
-
-        $("#stateCity-wrapper").$(byText("Haryana")).click();
-        $("#city").click();
-
-        $("#stateCity-wrapper").$(byText("Karnal")).click();
-        $("#submit").click();
-
-        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive")
-        .parent().shouldHave(text("Vito Korleone"),text("baron@boroda.com"),
-        text("Male"),text("0123456789"), text("07 December,1900"),
-        text("Commerce"), text("Music"), text("1.png"), text("Sicily"), text("Haryana Karnal"));
-
+        .setUserEmail("baron@boroda.com")
+        .setGenterWrapper("Male")
+        .setUserNumber("0123456789")
+        .setDateOfBirth("December", "7th", "1900")
+        .setSubjectsInput("Commerce")
+        .setHobbiesWrapper("Music")    // хобби
+        .setUploadPicture("img/1.png")  // фото
+        .setCurrentAddress("Sicily") // адрес
+        .setStateInput ("Haryana")
+        .setCityInput ("Karnal");
+        RegistrationPage.openPage().setTableChekInput("Thanks for submitting the form");
 
     }
-
 
 }

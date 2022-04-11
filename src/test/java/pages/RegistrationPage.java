@@ -1,6 +1,9 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import pages.components.CalendarComponent;
+import pages.components.CityComponents;
+import pages.components.StateComponents;
 
 import java.io.File;
 
@@ -9,21 +12,26 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class RegistrationPage {
+public class RegistrationPage<setStateInput> {
+
+    // components
+    CalendarComponent calendarComponent = new CalendarComponent();
+    StateComponents StateComponents = new StateComponents();
+    CityComponents CityComponents = new CityComponents();
     // locators
 private SelenideElement
      headerTitle = $(".practice-form-wrapper"),
      firstNameInput = $("#firstName"),
      lastNameInput = $("#lastName"),
      userEmailInput = $("#userEmail"),
-     userNumberInput = $("#userNumber"),
      genterWrapper = $("#genterWrapper"),
-     dateOfBirth = $("#dateOfBirthInput"),
+     userNumberInput = $("#userNumber"),
+    // dateOfBirth = $("#dateOfBirthInput"),
      subjectsInput = $("#subjectsInput"),
      hobbiesWrapper = $("#hobbiesWrapper"),
      uploadPicture = $("#uploadPicture"),
-     setCurrentAddress = $("#currentAddress");
-
+     CurrentAddress = $("#currentAddress"),
+     tableChekInput = $("#example-modal-sizes-title-lg");
 
     // actions
 public RegistrationPage openPage() {
@@ -32,51 +40,66 @@ public RegistrationPage openPage() {
     return this;
         }
 public RegistrationPage setFirstName (String firstName) {
-        firstNameInput.setValue(firstName);
+    firstNameInput.setValue(firstName);
     return this;
 }
 public RegistrationPage setLastName (String LastName) {
-        lastNameInput.setValue(LastName);
+    lastNameInput.setValue(LastName);
     return this;
 }
-public RegistrationPage setuserEmail (String userEmail) {
+public RegistrationPage setUserEmail (String userEmail) {
     userEmailInput.setValue(userEmail);
     return this;
  }
-public RegistrationPage setgenterWrapper (String Male) {
-        genterWrapper.$(byText(Male)).click();
+public RegistrationPage setGenterWrapper (String Male) {
+    genterWrapper.$(byText(Male)).click();
     return this;
 }
-public RegistrationPage setuserNumber (String userNumber) {
+public RegistrationPage setUserNumber (String userNumber) {
     userNumberInput.setValue(userNumber);
     return this;
 }
-public RegistrationPage setdateOfBirth (String day, String month,String year ) {
+public RegistrationPage setDateOfBirth (String day, String month,String year ) {
         $("#dateOfBirthInput").click(); // календарь
-        $(".react-datepicker__month-select").selectOption("December");
-        $(".react-datepicker__year-select").selectOption("1900");
-        $("[aria-label$='December 7th, 1900']").click();
+    calendarComponent.setdate(day, month, year);
     return this;
 }
-public void setsubjectsInput (String subjects) {
-        subjectsInput.setValue(subjects).pressEnter();
-
-}
-public RegistrationPage sethobbiesWrapper (String Music) {
-        hobbiesWrapper.$(byText(Music)).click();
+public RegistrationPage setSubjectsInput (String Subjects) {
+    subjectsInput.setValue(Subjects).pressEnter();
     return this;
 }
-public RegistrationPage uploadPicture (String uploadFile) {
+public RegistrationPage setHobbiesWrapper (String Music) {
+    hobbiesWrapper.$(byText(Music)).click();
+    return this;
+}
+public RegistrationPage setUploadPicture (String uploadFile) {
     uploadPicture.uploadFromClasspath("img/1.png");
     $("#state").scrollTo().click();
     return this;
 }
 public RegistrationPage setCurrentAddress (String currentAddress) {
-    setCurrentAddress.setValue(currentAddress);
+    CurrentAddress.setValue(currentAddress);
     $("#state").click();
         return this;
 }
 
+public RegistrationPage  setStateInput (String setState){
+    StateComponents.setState(setState);
+    return this;
+}
 
+public RegistrationPage  setCityInput (String setCity){
+    CityComponents.setCity(setCity);
+    return this;
+    }
 
+public RegistrationPage setTableChekInput (String tableChek){
+    tableChekInput.shouldHave(text("Thanks for submitting the form"));
+    $(".table-responsive")
+    .parent().shouldHave(text("Vito Korleone"),text("baron@boroda.com"),
+    text("Male"),text("0123456789"), text("07 December,1900"),
+    text("Commerce"), text("Music"), text("1.png"), text("Sicily"), text("Haryana Karnal"));
+    return this;
+
+}
 }
