@@ -74,12 +74,12 @@ public RegistrationPage setHobbiesWrapper (String Music) {
 }
 public RegistrationPage setUploadPicture (String uploadFile) {
     uploadPicture.uploadFromClasspath("img/1.png");
-    $("#state").scrollTo().click();
+
     return this;
 }
 public RegistrationPage setCurrentAddress (String currentAddress) {
     CurrentAddress.setValue(currentAddress);
-    $("#state").click();
+    $("#state").scrollTo().click();
         return this;
 }
 
@@ -99,7 +99,10 @@ public RegistrationPage setTableChekInput (String tableChek){
     .parent().shouldHave(text("Vito Korleone"),text("baron@boroda.com"),
     text("Male"),text("0123456789"), text("07 December,1900"),
     text("Commerce"), text("Music"), text("1.png"), text("Sicily"), text("Haryana Karnal"));
+
     return this;
+
+
 
 }
 }

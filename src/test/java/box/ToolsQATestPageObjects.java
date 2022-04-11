@@ -12,31 +12,29 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class ToolsQATestPageObjects {
     RegistrationPage RegistrationPage = new RegistrationPage();
-
     @BeforeAll
     static void beforeAll() {
-
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
-
     }
-
     @Test
     void successFillTest() {
         RegistrationPage.openPage()
-        .setFirstName("Vito")
-        .setLastName("Korleone")
-        .setUserEmail("baron@boroda.com")
-        .setGenterWrapper("Male")
-        .setUserNumber("0123456789")
-        .setDateOfBirth("December", "7th", "1900")
-        .setSubjectsInput("Commerce")
+        .setFirstName("Vito") //имя
+        .setLastName("Korleone") //фамилия
+        .setUserEmail("baron@boroda.com") //почта
+        .setGenterWrapper("Male") //пол
+        .setUserNumber("0123456789") //телефон
+        .setDateOfBirth("December", "7th", "1900") //дата рождения
+        .setSubjectsInput("Commerce") //работа
         .setHobbiesWrapper("Music")    // хобби
         .setUploadPicture("img/1.png")  // фото
         .setCurrentAddress("Sicily") // адрес
-        .setStateInput ("Haryana")
-        .setCityInput ("Karnal");
+        .setStateInput ("Haryana") //штат
+        .setCityInput ("Karnal"); //город
         RegistrationPage.openPage().setTableChekInput("Thanks for submitting the form");
+
+
 
     }
 
