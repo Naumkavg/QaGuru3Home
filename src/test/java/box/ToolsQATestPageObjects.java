@@ -32,9 +32,10 @@ public class ToolsQATestPageObjects {
         .setCurrentAddress("Sicily") // адрес
         .setStateInput ("Haryana") //штат
         .setCityInput ("Karnal"); //город
+        //.setclickSubmit();
         RegistrationPage.openPage().setTableChekInput("Thanks for submitting the form");
 
-
+            //не могу понять почему после вызова формы, форма закрываается и вызывается еще раз
 
     }
 

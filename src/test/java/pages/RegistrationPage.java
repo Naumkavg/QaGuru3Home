@@ -32,7 +32,7 @@ private SelenideElement
      uploadPicture = $("#uploadPicture"),
      CurrentAddress = $("#currentAddress"),
      tableChekInput = $("#example-modal-sizes-title-lg");
-
+    // clickSubmitInput = $("submit");
     // actions
 public RegistrationPage openPage() {
         open("/automation-practice-form");
@@ -60,8 +60,7 @@ public RegistrationPage setUserNumber (String userNumber) {
     return this;
 }
 public RegistrationPage setDateOfBirth (String day, String month,String year ) {
-        $("#dateOfBirthInput").click(); // календарь
-    calendarComponent.setdate(day, month, year);
+          calendarComponent.setdate(day, month, year);
     return this;
 }
 public RegistrationPage setSubjectsInput (String Subjects) {
@@ -79,7 +78,7 @@ public RegistrationPage setUploadPicture (String uploadFile) {
 }
 public RegistrationPage setCurrentAddress (String currentAddress) {
     CurrentAddress.setValue(currentAddress);
-    $("#state").scrollTo().click();
+    $("#state").click();
         return this;
 }
 
@@ -90,8 +89,13 @@ public RegistrationPage  setStateInput (String setState){
 
 public RegistrationPage  setCityInput (String setCity){
     CityComponents.setCity(setCity);
+    $("#submit").click();
     return this;
     }
+//public RegistrationPage setclickSubmit (){
+  //  $("clickSubmitInput").click();
+   //     return this;
+  //  }
 
 public RegistrationPage setTableChekInput (String tableChek){
     tableChekInput.shouldHave(text("Thanks for submitting the form"));
